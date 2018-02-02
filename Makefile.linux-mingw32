@@ -3,9 +3,14 @@
 CC=i686-w64-mingw32-gcc
 TARGET=test-mswin-setmode
 CFLAGS=-Wall -g
+DOT_BAT_RUNNER=wineconsole
+TEST_DIR=tests
 
 $(TARGET).exe: $(TARGET).c
 	$(CC) $(CFLAGS) $^ -o $@
+
+test: $(TARGET).exe
+	$(DOT_BAT_RUNNER) @tests\run-all.bat
 
 clean:
 	$(RM) $(TARGET).exe

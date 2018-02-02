@@ -4,4 +4,4 @@ include Makefile.linux-mingw32
 
 CC=gcc
 RM:=del
-
+DOT_BAT_RUNNER=
