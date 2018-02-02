@@ -1,0 +1,12 @@
+# For vim: set makeprg=make\ -f\ Makefile.linux-mingw32
+
+CC=i686-w64-mingw32-gcc
+TARGET=test-mswin-setmode
+CFLAGS=-Wall -g
+
+$(TARGET).exe: $(TARGET).c
+	$(CC) $(CFLAGS) $^ -o $@
+
+clean:
+	$(RM) $(TARGET).exe
+
